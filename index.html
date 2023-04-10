@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Conversion de date grégorienne en date hijri</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/moment-hijri/1.1.0/moment-hijri.min.js"></script>
+</head>
+<body>
+  <h1>Conversion de date grégorienne en date hijri</h1>
+  <form>
+    <label for="date">Entrez une date grégorienne (aaaa-mm-jj) :</label>
+    <input type="date" id="date" name="date">
+    <button type="button" onclick="convertirDate()">Convertir</button>
+  </form>
+  <p>Date hijri correspondante : <span id="resultat"></span></p>
+  
+  <script>
+    function convertirDate() {
+      var dateGregorienne = moment(document.getElementById("date").value);
+      var dateHijri = dateGregorienne.format("iYYYY/iM/iD");
+      document.getElementById("resultat").innerHTML = dateHijri;
+    }
+  </script>
+</body>
+</html>
